@@ -56,17 +56,17 @@ export default function TextForm(props) {
 
 <textarea className="form-control" id="mybox" rows="8" value={text} onChange={handleOnChange}></textarea>
 </div>
-<button className='btn btn-primary mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
-<button className='btn btn-primary mx-2' onClick={handleDownClick}>Convert to Lowercase</button>
-<button className='btn btn-primary mx-2' onClick={handleClear}>Clear Text</button>
-<button className='btn btn-primary mx-2' onClick={EmailExtracter}>Extract Email Addresses</button>
-<button className='btn btn-primary mx-2' onClick={Firstcap}>First Letter Capital</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleUpClick}>Convert to Uppercase</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleDownClick}>Convert to Lowercase</button>
+<button className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
+<button className='btn btn-primary mx-2 my-1' onClick={EmailExtracter}>Extract Email Addresses</button>
+<button className='btn btn-primary mx-2 my-1' onClick={Firstcap}>First Letter Capital</button>
 </div>
 <div className='container'>
-<p>Number of words {text.split(" ").length}</p>
+<p>Number of words {text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
 <p>Number of characters {text.length}</p>
 <p>Email addresses in Text {email}</p>
-<p>Average reading time {0.008*text.split(" ").length} minutes</p>
+<p>Average reading time {0.008*text.split(" ").filter((element)=>{return element.length!==0}).length} minutes</p>
 <h3>Preview</h3>
 <p>{text}</p>
 </div>
